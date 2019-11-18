@@ -1,4 +1,5 @@
 from celery.task import task
+import random
 
 #Default base directory 
 #basedir="/data/static/"
@@ -13,3 +14,15 @@ def add(x, y):
     """
     result = x + y
     return result
+
+@task()
+def randm_number(seed):
+    """
+       It generates a random number based of a given seed value
+       args:
+           seed
+       return:
+           random number
+    """
+    return random.random(seed)
+
