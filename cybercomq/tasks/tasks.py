@@ -16,7 +16,7 @@ def add(x, y):
     return result
 
 @task()
-def randm_number(seed):
+def randm_number(seed=None):
     """
        It generates a random number based of a given seed value
        args:
@@ -24,5 +24,7 @@ def randm_number(seed):
        return:
            random number
     """
-    return random.random(seed)
+    if seed:
+        random.seed(seed)
+    return random.random()
 
